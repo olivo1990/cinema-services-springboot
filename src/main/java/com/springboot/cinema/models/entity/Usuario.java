@@ -32,8 +32,6 @@ public class Usuario implements Serializable {
 	@Column(name = "id_perfil")
 	private Long idPerfil;
 
-	private Perfil perfil;
-
 	public Long getId() {
 		return id;
 	}
@@ -88,14 +86,6 @@ public class Usuario implements Serializable {
 
 	public void setIdPerfil(Long idPerfil) {
 		this.idPerfil = idPerfil;
-	}
-
-	public Perfil getPerfil() {
-		return perfil;
-	}
-
-	public void setPerfil(Perfil perfil) {
-		this.perfil = perfil;
 	}
 
 	/**

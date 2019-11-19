@@ -28,8 +28,8 @@ public class Perfil implements Serializable {
 	private String descripcion;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "menu_perfil", joinColumns = @JoinColumn(name = "id_pefil"), inverseJoinColumns = @JoinColumn(name = "id_menu"), uniqueConstraints = {
-			@UniqueConstraint(columnNames = { "id_pefil", "id_menu" }) })
+	@JoinTable(name = "menu_perfil", joinColumns = @JoinColumn(name = "id_perfil"), inverseJoinColumns = @JoinColumn(name = "id_menu"), uniqueConstraints = {
+			@UniqueConstraint(columnNames = { "id_perfil", "id_menu" }) })
 	List<Menu> menu;
 
 	public Perfil() {
