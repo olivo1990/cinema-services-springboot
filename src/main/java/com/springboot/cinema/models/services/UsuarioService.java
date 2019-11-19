@@ -16,9 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.springboot.cinema.models.dao.IPerfilDao;
 import com.springboot.cinema.models.dao.IUsuarioDao;
-import com.springboot.cinema.models.entity.Perfil;
 import com.springboot.cinema.models.entity.Usuario;
 import com.springboot.cinema.models.interfaces.IUsuarioService;
 
@@ -30,8 +28,6 @@ public class UsuarioService implements IUsuarioService, UserDetailsService {
 	
 	@Autowired
 	private IUsuarioDao usuarioDao;
-	
-	@Autowired IPerfilDao perfilDao;
 	
 	@Override
 	@Transactional(readOnly=true)
@@ -68,12 +64,6 @@ public class UsuarioService implements IUsuarioService, UserDetailsService {
 	@Transactional(readOnly=true)
 	public Usuario findByUserId(Long id) {
 		return usuarioDao.findById(id).orElse(null);
-	}
-
-	@Override
-	@Transactional(readOnly=true)
-	public Perfil findByUserIdPerfil(Long idPerfil) {
-		return perfilDao.findByid(idPerfil);
 	}
 
 }
